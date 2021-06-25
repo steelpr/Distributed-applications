@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/WcfSOAP" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ApplicationService.DTOs" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Data.Entities" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Microsoft.AspNet.Identity.EntityFramework" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArticle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostArticle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetArticleById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetArticleById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetArticleById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetArticleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditArticle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArticle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEventById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEventById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostRecipe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRecipeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipeById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetRecipeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecipeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteRecipe_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecipe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteRecipe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRecipeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLike_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLike" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetLike_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLikeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostLike_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostLike" />
+  </wsdl:message>
+  <wsdl:message name="IService1_PostLike_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostLikeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetArticle" message="tns:IService1_GetArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetArticleResponse" message="tns:IService1_GetArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostArticle" message="tns:IService1_PostArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostArticleResponse" message="tns:IService1_PostArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetArticleById" message="tns:IService1_GetArticleById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetArticleByIdResponse" message="tns:IService1_GetArticleById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditArticle" message="tns:IService1_EditArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditArticleResponse" message="tns:IService1_EditArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArticle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteArticle" message="tns:IService1_DeleteArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteArticleResponse" message="tns:IService1_DeleteArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEvent" message="tns:IService1_GetEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEventResponse" message="tns:IService1_GetEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostEvent" message="tns:IService1_PostEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostEventResponse" message="tns:IService1_PostEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEventById" message="tns:IService1_GetEventById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEventByIdResponse" message="tns:IService1_GetEventById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteEvent" message="tns:IService1_DeleteEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteEventResponse" message="tns:IService1_DeleteEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRecipe" message="tns:IService1_GetRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRecipeResponse" message="tns:IService1_GetRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostRecipe" message="tns:IService1_PostRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostRecipeResponse" message="tns:IService1_PostRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetRecipeById" message="tns:IService1_GetRecipeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetRecipeByIdResponse" message="tns:IService1_GetRecipeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecipe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteRecipe" message="tns:IService1_DeleteRecipe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteRecipeResponse" message="tns:IService1_DeleteRecipe_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLike">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetLike" message="tns:IService1_GetLike_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetLikeResponse" message="tns:IService1_GetLike_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostLike">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/PostLike" message="tns:IService1_PostLike_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/PostLikeResponse" message="tns:IService1_PostLike_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticle">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostArticle">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetArticleById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetArticleById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditArticle">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteArticle">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteArticle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEventById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipe">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRecipe">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecipeById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetRecipeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRecipe">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteRecipe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLike">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetLike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostLike">
+      <soap:operation soapAction="http://tempuri.org/IService1/PostLike" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/WcfSOAP/Service1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

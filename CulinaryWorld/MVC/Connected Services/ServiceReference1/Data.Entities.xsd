@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Data.Entities" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Data.Entities" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Microsoft.AspNet.Identity.EntityFramework" />
+  <xs:complexType name="ArrayOfLike">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Like" nillable="true" type="tns:Like" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLike" nillable="true" type="tns:ArrayOfLike" />
+  <xs:complexType name="Like">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Article" nillable="true" type="tns:Article" />
+          <xs:element minOccurs="0" name="ArticleId" type="xs:int" />
+          <xs:element minOccurs="0" name="Likes" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Like" nillable="true" type="tns:Like" />
+  <xs:complexType name="BaseEntity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BaseEntity" nillable="true" type="tns:BaseEntity" />
+  <xs:complexType name="Article">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Like" nillable="true" type="tns:ArrayOfLike" />
+          <xs:element minOccurs="0" name="TimeToRead" type="xs:double" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:CulinaryWorldUser" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VideoUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Article" nillable="true" type="tns:Article" />
+  <xs:complexType name="CulinaryWorldUser">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.AspNet.Identity.EntityFramework" base="q1:IdentityUser">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Articles" nillable="true" type="tns:ArrayOfArticle" />
+          <xs:element minOccurs="0" name="Events" nillable="true" type="tns:ArrayOfEvent" />
+          <xs:element minOccurs="0" name="Recipes" nillable="true" type="tns:ArrayOfRecipe" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CulinaryWorldUser" nillable="true" type="tns:CulinaryWorldUser" />
+  <xs:complexType name="ArrayOfArticle">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Article" nillable="true" type="tns:Article" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArticle" nillable="true" type="tns:ArrayOfArticle" />
+  <xs:complexType name="ArrayOfEvent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Event" nillable="true" type="tns:Event" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEvent" nillable="true" type="tns:ArrayOfEvent" />
+  <xs:complexType name="Event">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Duration" type="xs:double" />
+          <xs:element minOccurs="0" name="Participant" type="xs:int" />
+          <xs:element minOccurs="0" name="Place" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:CulinaryWorldUser" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Event" nillable="true" type="tns:Event" />
+  <xs:complexType name="ArrayOfRecipe">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Recipe" nillable="true" type="tns:Recipe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecipe" nillable="true" type="tns:ArrayOfRecipe" />
+  <xs:complexType name="Recipe">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:BaseEntity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+          <xs:element minOccurs="0" name="Products" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Time" type="xs:double" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="User" nillable="true" type="tns:CulinaryWorldUser" />
+          <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VideoUrl" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Recipe" nillable="true" type="tns:Recipe" />
+</xs:schema>

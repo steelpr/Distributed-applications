@@ -1,0 +1,66 @@
+﻿@model MVC.ViewModel.EventVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детайли на събитието</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <p>Име на събитието</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            <p>Място на събитието</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place)
+        </dd>
+
+        <dt>
+            <p>Дата</p>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            <p>Описание</p>
+
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            <p>Максимален брой учстници</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Participant)
+        </dd>
+
+        <dt>
+            <p>Продължителност</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Duration)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Към събитията", "Index")
+</p>

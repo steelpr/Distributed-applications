@@ -1,0 +1,57 @@
+﻿@model MVC.ViewModel.ArticleVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детайли</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            <h5>Заглавие</h5>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            <h5>Линк към снимката</h5>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+        <dt>
+            <h5>линк към видеото</h5>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoUrl)
+        </dd>
+
+        <dt>
+            <h5>Време за четене</h5>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeToRead) <p>  минути</p>
+        </dd>
+
+        <dt>
+            <h5>Описание</h5>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Към новините", "Index")
+</p>

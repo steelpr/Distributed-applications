@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MVC.ViewModel.EventVM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Събития</h2>
+
+<p>
+    @Html.ActionLink("Създай", "Create")
+</p>
+
+<table class="table">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">@item.Place</p>
+                    <p class="card-text">@item.Date</p>
+                    <p class="card-text">Описание: @item.Description</p>
+                    <p class="card-text">Максимален броий участници: @item.Participant</p>
+                    <p class="card-text">Продължителност: @item.Duration часа</p>
+
+
+                    <a href="/Event/details/@item.Id" class="btn btn-primary">Повече</a>
+                    <a href="/Event/delete/@item.Id" class="btn btn-primary">Изтрий</a>
+                </div>
+            </div>
+        </div>
+    }
+
+</table>

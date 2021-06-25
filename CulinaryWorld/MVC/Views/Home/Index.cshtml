@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://matekitchen.com/wp-content/uploads/2020/08/lesni-recepti.jpg" height="500" width="1270" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h3 class="text-center">Всички рецепти на едно място</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="https://gotvach.bg/files/lib/400x296/green-vegetables-mix-carrots.jpg" class="card-img-top" alt="..." style="width: 380px" height="230">
+            <h2>Новини</h2>
+            <p>
+                Всички актуални новини свързани с кулинарията.
+            </p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p><a class="btn btn-default" href="https://localhost:44322/article">Всички новини &raquo;</a></p>
+            }
+        </div>
+        <div class="col-md-4">
+            <img src="https://pronewsdobrich.bg/wp-content/uploads/2018/03/%D0%B3%D0%BE%D1%82%D0%B2%D0%B5%D0%BD%D0%B5-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D1%87%D1%83%D1%86%D0%B8-1-1000x620.jpg" class="card-img-top" alt="..." style="width: 380px" height="230">
+            <h2>Рецепти</h2>
+            <p>Тук, ще намерите рецепти за всяко ястие, което тъсите.</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p><a class="btn btn-default" href="https://localhost:44322/recipe">Ввички рецепти &raquo;</a></p>
+            }
+        </div>
+        <div class="col-md-4">
+            <img src="https://starjournalnow.com/wp-content/uploads/2018/07/EVENTS-GRAPHIC_web.jpg" class="card-img-top" alt="..." style="width: 380px" height="230">
+            <h2>Събития</h2>
+            <p>Може да създадете или да вземете участие в събития свързани с кулинария.</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p><a class="btn btn-default" href="https://localhost:44322/event">Събития &raquo;</a></p>
+            }
+            </div>
+    </div>

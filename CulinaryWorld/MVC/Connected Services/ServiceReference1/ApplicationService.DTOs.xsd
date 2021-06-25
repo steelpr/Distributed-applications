@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ApplicationService.DTOs" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ApplicationService.DTOs" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Data.Entities" />
+  <xs:complexType name="ArrayOfArticleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArticleDTO" nillable="true" type="tns:ArticleDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArticleDTO" nillable="true" type="tns:ArrayOfArticleDTO" />
+  <xs:complexType name="ArticleDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="Like" nillable="true" type="q1:ArrayOfLike" />
+      <xs:element minOccurs="0" name="TimeToRead" type="xs:double" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="User" nillable="true" type="q2:CulinaryWorldUser" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VideoUrl" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArticleDTO" nillable="true" type="tns:ArticleDTO" />
+  <xs:complexType name="ArrayOfEventDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventDTO" nillable="true" type="tns:EventDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventDTO" nillable="true" type="tns:ArrayOfEventDTO" />
+  <xs:complexType name="EventDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Participant" type="xs:int" />
+      <xs:element minOccurs="0" name="Place" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="User" nillable="true" type="q3:CulinaryWorldUser" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventDTO" nillable="true" type="tns:EventDTO" />
+  <xs:complexType name="ArrayOfRecipeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RecipeDTO" nillable="true" type="tns:RecipeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRecipeDTO" nillable="true" type="tns:ArrayOfRecipeDTO" />
+  <xs:complexType name="RecipeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Products" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" type="xs:double" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="User" nillable="true" type="q4:CulinaryWorldUser" />
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VideoUrl" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RecipeDTO" nillable="true" type="tns:RecipeDTO" />
+  <xs:complexType name="ArrayOfLikeDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LikeDTO" nillable="true" type="tns:LikeDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLikeDTO" nillable="true" type="tns:ArrayOfLikeDTO" />
+  <xs:complexType name="LikeDTO">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Data.Entities" minOccurs="0" name="Article" nillable="true" type="q5:Article" />
+      <xs:element minOccurs="0" name="ArticleId" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Likes" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LikeDTO" nillable="true" type="tns:LikeDTO" />
+</xs:schema>

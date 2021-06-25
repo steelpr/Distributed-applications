@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MVC.ViewModel.RecipeVM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Рецепти</h2>
+
+<p>
+    @Html.ActionLink("Създай", "Create")
+</p>
+
+<style>
+    .p {
+        white-space: nowrap;
+        width: 370px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: 1px solid #000000;
+    }
+</style>
+
+<table class="table">
+
+
+    @foreach (var item in Model)
+    {
+
+        <div class="col-sm-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Title</h5>
+                    <p class="card-text">Продукти: @item.Products</p>
+                    <p class="card-text">Цена на продуктите: @item.Price лв.</p>
+                    <p class="card-text">Време за приготвяне @item.Time минути</p>
+
+                    <img src="@item.ImageUrl" height="260" width="370" />
+                    <br />
+                    <br />
+                    <iframe width="370" height="260" src="@item.VideoUrl">
+                    </iframe>
+                    <p class="p">@item.Description</p>
+                    <a href="/Recipe/details/@item.Id" class="btn btn-primary">Повече</a>
+                    <a href="/recipe/delete/@item.Id" class="btn btn-primary">Изтрий</a>
+                </div>
+            </div>
+        </div>
+        
+    }
+</table>

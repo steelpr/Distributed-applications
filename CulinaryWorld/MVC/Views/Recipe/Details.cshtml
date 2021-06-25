@@ -1,0 +1,73 @@
+﻿@model MVC.ViewModel.RecipeVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Детайли на рецептата</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+          <p>Име на ястието: </p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            <p>Необходими продукти: </p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Products)
+        </dd>
+
+        <dt>
+            <p>Линк към снимката</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+
+        <dt>
+            <p>Линк към видеото: </p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VideoUrl)
+        </dd>
+
+        <dt>
+            <p>Цена на продуктите: </p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            <p>Време за приготвяне</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Time)
+        </dd>
+
+        <dt>
+            <p>Описание</p>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Рецепти", "Index")
+</p>
